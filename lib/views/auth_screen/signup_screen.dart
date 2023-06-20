@@ -1,5 +1,5 @@
 import 'package:emart_app/consts/colors.dart';
-import 'package:emart_app/consts/lists.dart';
+//import 'package:emart_app/consts/lists.dart';
 import 'package:emart_app/consts/strings.dart';
 import 'package:emart_app/consts/styles.dart';
 import 'package:emart_app/widgets_common/applog_widget.dart';
@@ -12,8 +12,15 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool? isCheck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +48,14 @@ class SignupScreen extends StatelessWidget {
                     Row(
                       children: [
                         Checkbox(
-                          checkColor: redColor,
-                            value: false,
-                            onChanged: (newValue){},
+                          activeColor: redColor,
+                          checkColor: whiteColor,
+                            value: isCheck,
+                            onChanged: (newValue){
+                            setState(() {
+                              isCheck = newValue;
+                            });
+                            },
                         ),
                         10.heightBox,
                         Expanded(
@@ -53,25 +65,25 @@ class SignupScreen extends StatelessWidget {
                                   TextSpan(
                                     text: "I agree to the ",
                                     style: TextStyle(
-                                      fontFamily: bold,
+                                      fontFamily: regular,
                                       color: fontGrey,
                                     )),
                                   TextSpan(
                                       text: termAndCond,
                                       style: TextStyle(
-                                        fontFamily: bold,
+                                        fontFamily: regular,
                                         color: redColor,
                                       )),
                                   TextSpan(
                                       text: " & ",
                                       style: TextStyle(
-                                        fontFamily: bold,
+                                        fontFamily: regular,
                                         color: fontGrey,
                                       )),
                                   TextSpan(
                                       text: privacyPolicy,
                                       style: TextStyle(
-                                        fontFamily: bold,
+                                        fontFamily: regular,
                                         color: redColor,
                                       )),
                                 ]
@@ -81,25 +93,23 @@ class SignupScreen extends StatelessWidget {
                     ),
                     5.heightBox,
                     //ourButton().box.width(context.screenWidth - 50).make(),
-                    ourButton(color: redColor, title: signup, textColor: whiteColor, onPress: (){})
+                    ourButton(color: isCheck == true ? redColor : lightGrey,
+                        title: signup,
+                        textColor: whiteColor,
+                        onPress: (){})
                         .box
                         .width(context.screenWidth - 50)
                         .make(),
-                    5.heightBox,
-                    RichText(text: const TextSpan(
-                      children: [
-                        TextSpan(
-                          text: alreadyHaveAccount,
-                          style: TextStyle(fontFamily: bold, color: fontGrey),
-                        ),
-                        TextSpan(
-                          text: login,
-                          style: TextStyle(fontFamily: bold, color: redColor),
-                        )
-                      ]
-                    )).onTap(() {
-                      Get.back();
-                    }),
+                    10.heightBox,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      alreadyHaveAccount.text.color(fontGrey).make(),
+                      login.text.color(redColor).make().onTap(() {
+                        Get.back();
+                      }),
+                    ],
+                  ),
                   ],
                 ).box.white.rounded.padding(const EdgeInsets.all(16)).width(context.screenWidth - 70).shadowSm.make(),
 

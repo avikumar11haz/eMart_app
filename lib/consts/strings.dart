@@ -16,3 +16,15 @@ const emailHint = "admin@admin.com";
     const privacyPolicy = "Privacy Policy";
     const termAndCond = "Terms and Conditions";
     const alreadyHaveAccount = "Already have an account? ";
+
+    const home = "Home", categories = "Categories", cart = "Cart", account = "Account";
+
+    const searchanything = "Search anything...", todayDeal = "Today's Deal", flashsale = "Flash Sale", topsellers = "Top Sellers", brand = "Brand", topcategories ="Top Categories",
+    womenDress = "Women Dress",
+    girlsWatches = "Girls Watches",
+    mobilePhone = "Mobile Phone",
+    boysGlasses = "Boys Glasses",
+    tShirts = "TShirts",
+    girlsDress = "Girls Dresses",
+    featuredProduct = "Featured Products",
+        featuredCategories = "Featured Categories";
