@@ -28,3 +28,21 @@ const emailHint = "admin@admin.com";
     girlsDress = "Girls Dresses",
     featuredProduct = "Featured Products",
         featuredCategories = "Featured Categories";
+
+    //category strings
+ const womenClothing = "Women Clothing",
+    menClothingFashion = "Men Clothing & Fashion",
+    compAccess = "Computer & Accessories",
+    automobile = "Automobile",
+    kidtoys = "Kids & Toys",
+    sports = "Sports",
+    jewelery = "Jewelery",
+    cellphone = "Cellphone & Tab",
+    furniture = "Furniture";
+
+ const video = "Video",
+     reviews = "Reviews",
+     sellerpolicy = "Seller Policy",
+     returnpolicy = "Return Policy",
+     supplypolicy = "Supply Policy",
+    productsyoumaylike = "Products you may also like";

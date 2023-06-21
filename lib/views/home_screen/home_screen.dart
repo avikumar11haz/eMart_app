@@ -173,10 +173,10 @@ class HomeScreen extends StatelessWidget {
                          Image.asset(imgP5,height: 200, width: 200, fit: BoxFit.cover,
                          ),
                          const Spacer(),
-                         10.heightBox,
                          "Laptop 4GB/64GB".text.fontFamily(semibold).color(darkFontGrey).make(),
                          10.heightBox,
-                         "\$600".text.color(redColor).fontFamily(bold).size(16).make()
+                         "\$600".text.color(redColor).fontFamily(bold).size(16).make(),
+                         10.heightBox,
                        ],
                      ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).roundedSM.padding(EdgeInsets.all(12)).color(whiteColor).make();
                    })
