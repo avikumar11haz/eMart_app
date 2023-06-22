@@ -10,10 +10,13 @@ const emailHint = "admin@admin.com";
     const name = "Name";
     const nameHint = "^v! kumar";
     const login = "Log in";
+    const logout = "Log Out";
     const signup = "Sign up";
     const createNewAccount = "or, create a new account";
     const loginWith = "Log in with";
     const privacyPolicy = "Privacy Policy";
+    const loggedin = "Logged in successfully";
+    const loggedout = "Logged out successfully";
     const termAndCond = "Terms and Conditions";
     const alreadyHaveAccount = "Already have an account? ";
 
@@ -40,9 +43,12 @@ const emailHint = "admin@admin.com";
     cellphone = "Cellphone & Tab",
     furniture = "Furniture";
 
+ //item details
  const video = "Video",
      reviews = "Reviews",
      sellerpolicy = "Seller Policy",
      returnpolicy = "Return Policy",
      supplypolicy = "Supply Policy",
     productsyoumaylike = "Products you may also like";
+
+ const wishlist = "My Wishlist", orders = "My Orders", message = "Messages";

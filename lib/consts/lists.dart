@@ -21,3 +21,6 @@ const categoriesImages = [
 ];
 
 const itemDetailButtonsList = [video, reviews, privacyPolicy, returnpolicy, supplypolicy];
+
+const profileButtonsList = [orders, wishlist, message];
+const profileButtonsIcon = [icOrder, icOrders, icMessages];

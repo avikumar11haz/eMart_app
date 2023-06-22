@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1084036490708",
+    "project_id": "hmart-24d49",
+    "storage_bucket": "hmart-24d49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084036490708:android:ef2c0f255cfdc15e78a241",
+        "android_client_info": {
+          "package_name": "com.moonlight.emart_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084036490708-ftq8suvcse447jc9rlo1mih0kju1h8pm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moonlight.emart_app",
+            "certificate_hash": "32d15fdde6e07f149b215c6cfdd26f819072ecc5"
+          }
+        },
+        {
+          "client_id": "1084036490708-0mvt10o9i4t4j6jp1536i668atbr6pqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb-CqsXrySA6Q5OPXPCLqPl-qAMXlC60M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084036490708-0mvt10o9i4t4j6jp1536i668atbr6pqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
