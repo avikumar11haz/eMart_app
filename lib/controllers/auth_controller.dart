@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController{
+  var isloading = false.obs;
 
   //textController
   var emailController = TextEditingController();
@@ -39,7 +40,16 @@ class AuthController extends GetxController{
   //storing data method
   storeUserData({name, password, email}) async{
     DocumentReference store = firestore.collection(usersCollections).doc(currentUser!.uid);
-    store.set({'name': name, 'password': password, 'email': email, 'imageUrl': ''});
+    store.set({
+      'name': name,
+      'password': password,
+      'email': email,
+      'imageUrl': '',
+      'id': currentUser!.uid,
+      'cart_count': "00",
+      'wishlist_count': "00",
+      'order_count': "00",
+    });
   }
 
   //signout method

@@ -51,4 +51,5 @@ const emailHint = "admin@admin.com";
      supplypolicy = "Supply Policy",
     productsyoumaylike = "Products you may also like";
 
- const wishlist = "My Wishlist", orders = "My Orders", message = "Messages";
+ const wishlist = "My Wishlist", orders = "My Orders", message = "Messages",
+oldpass = "Old Password", newpass = "New Password";

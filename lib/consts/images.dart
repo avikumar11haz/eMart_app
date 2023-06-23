@@ -63,6 +63,7 @@ const imgB8 = "assets/images/b8.jpeg";
 const imgB9 = "assets/images/b9.jpeg";
 const imgB10 = "assets/images/b10.jpeg";
 const imgCod = "assets/images/cod.png";
+const imgFc0 = "assets/images/Fc0.jpg";
 const imgFc1 = "assets/images/fc1.jpeg";
 const imgFc2 = "assets/images/fc2.jpeg";
 const imgFc3 = "assets/images/fc3.jpeg";

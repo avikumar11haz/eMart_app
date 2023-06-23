@@ -1,3 +1,4 @@
+import 'package:emart_app/controllers/product_controller.dart';
 import 'package:emart_app/views/category_screen/item_details.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class CategoryDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.find<ProductController>();
+
     return bgWidget(child: Scaffold(
       appBar: AppBar(
         title: title!.text.fontFamily(bold).white.make(),
@@ -24,7 +27,9 @@ class CategoryDetails extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               child: Row(
-                children: List.generate(6, (index) => "Baby Clothing".text.size(12).fontFamily(semibold).color(darkFontGrey).makeCentered().box.white.roundedSM.size(120, 60).margin(EdgeInsets.symmetric(horizontal: 4)).make()),
+                children: List.generate(
+                controller.subcat.length,
+                  (index) => "${controller.subcat[index]}".text.size(12).fontFamily(semibold).color(darkFontGrey).makeCentered().box.white.roundedSM.size(120, 60).margin(EdgeInsets.symmetric(horizontal: 4)).make()),
               ),
             ),
 
