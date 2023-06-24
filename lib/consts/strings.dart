@@ -39,7 +39,7 @@ const emailHint = "admin@admin.com";
     automobile = "Automobile",
     kidtoys = "Kids & Toys",
     sports = "Sports",
-    jewelery = "Jewelery",
+    cosmetic = "Cosmetic",
     cellphone = "Cellphone & Tab",
     furniture = "Furniture";
 

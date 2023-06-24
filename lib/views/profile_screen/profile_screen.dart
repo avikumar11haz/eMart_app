@@ -77,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
 
-                  // 20.heightBox,
+                  9.heightBox,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -88,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
 
                   //buttons section
-                  // 20.heightBox,
+                  //  20.heightBox,
                   ListView.separated(
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index){
