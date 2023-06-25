@@ -11,6 +11,7 @@ import 'package:emart_app/views/profile_screen/components/details_cart.dart';
 import 'package:emart_app/views/profile_screen/edit_profile_screen.dart';
 import 'package:emart_app/views/wishlist_screen/wishlist_screen.dart';
 import 'package:emart_app/widgets_common/bg_widgets.dart';
+import 'package:emart_app/widgets_common/loading_indicator.dart';
 import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -19,6 +20,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(ProfileController());
+
 
     return bgWidget(child: Scaffold(
       body: StreamBuilder(
@@ -80,15 +82,33 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
 
-                  9.heightBox,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      detailsCard(width: context.screenWidth/3.4, count: data['cart_count'], title: "in your cart"),
-                      detailsCard(width: context.screenWidth/3.4, count: data['wishlist_count'], title: "in your wishlist"),
-                      detailsCard(width: context.screenWidth/3.4, count: data['order_count'], title: "your orders"),
-                    ],
-                  ),
+                  20.heightBox,
+                  FutureBuilder(
+                    future: FirestoreServices.getCounts(),
+                      builder: (BuildContext context, AsyncSnapshot snapshot){
+                      if(!snapshot.hasData){
+                        return Center(child: loadingIndicator(),);
+                      }else{
+                        var countData = snapshot.data;
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            detailsCard(width: context.screenWidth/3.3, count: countData[0].toString(), title: "in your cart"),
+                            detailsCard(width: context.screenWidth/3.3, count: countData[1].toString(), title: "in your wishlist"),
+                            detailsCard(width: context.screenWidth/3.3, count: countData[2].toString(), title: "your orders"),
+                          ],
+                        );
+                      }
+                      }),
+
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //   children: [
+                  //     detailsCard(width: context.screenWidth/3.4, count: data['cart_count'], title: "in your cart"),
+                  //     detailsCard(width: context.screenWidth/3.4, count: data['wishlist_count'], title: "in your wishlist"),
+                  //     detailsCard(width: context.screenWidth/3.4, count: data['order_count'], title: "your orders"),
+                  //   ],
+                  // ),
 
                   //buttons section
                   //  20.heightBox,
@@ -107,12 +127,12 @@ class ProfileScreen extends StatelessWidget {
                             case 2:
                               Get.to(()=> const MessagesScreen());
                               break;
-
                           }
                         },
                         leading: Image.asset(
                           profileButtonsIcon[index],
                           width: 22,
+                          color: darkFontGrey,
                         ),
                         title: profileButtonsList[index].text.fontFamily(semibold).color(darkFontGrey).make(),
                       );
