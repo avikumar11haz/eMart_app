@@ -73,6 +73,7 @@ class CategoryDetails extends StatelessWidget {
                                 10.heightBox,
                               ],
                             ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).roundedSM.outerShadowSm.padding(EdgeInsets.all(12)).color(whiteColor).make().onTap(() {
+                              controller.checkIfFav(data[index]);
                               Get.to(() => ItemDetails(title: "${data[index]['p_name']}", data: data[index]));
                             });
                           }))
