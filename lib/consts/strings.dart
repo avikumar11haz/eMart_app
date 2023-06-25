@@ -53,3 +53,6 @@ const emailHint = "admin@admin.com";
 
  const wishlist = "My Wishlist", orders = "My Orders", message = "Messages",
 oldpass = "Old Password", newpass = "New Password";
+
+ //payment methods strings
+const paypal = "Paypal", stripe = "Stripe", cod = "Cash on delivery";
