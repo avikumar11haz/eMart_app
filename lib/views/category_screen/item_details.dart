@@ -32,14 +32,14 @@ class ItemDetails extends StatelessWidget {
             IconButton(onPressed: (){}, icon: const Icon(Icons.share)),
             Obx(
                   () => IconButton(onPressed: (){
-                if(controller.isFav.value){
-                  controller.removeFromWishlist(data.id, context);
+                    if(controller.isFav.value){
+                    controller.removeFromWishlist(data.id, context);
                   //controller.isFav(false);
-                }else{
-                  controller.addToWishlist(data.id, context);
+                    }else{
+                    controller.addToWishlist(data.id, context);
                   //controller.isFav(true);
-                }
-                }, icon: Icon(Icons.favorite_outlined,
+                    }
+                     }, icon: Icon(Icons.favorite_outlined,
                 color: controller.isFav.value ? redColor : darkFontGrey,
               )),
             )
@@ -229,6 +229,7 @@ class ItemDetails extends StatelessWidget {
                   controller.addToCart(
                     color: data['p_colors'][controller.colorIndex.value],
                     context: context,
+                    vendorID: data['vendor_id'],
                     img: data['p_images'][0],
                     qty: controller.quantity.value,
                     sellername: data['p_seller'],
