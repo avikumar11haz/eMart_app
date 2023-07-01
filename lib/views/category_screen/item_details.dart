@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 class ItemDetails extends StatelessWidget {
   final String? title;
   final dynamic data;
-  const ItemDetails({Key? key, required this.title, this.data}) : super(key: key);
+  const ItemDetails({Key? key, required this.title, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(ProductController());
+    var controller = Get.find<ProductController>();
 
     return WillPopScope(
       onWillPop: ()async {
@@ -26,7 +26,8 @@ class ItemDetails extends StatelessWidget {
             controller.resetValues();
             Get.back();
           },
-            icon: Icon(Icons.arrow_back),),
+            icon: const Icon(Icons.arrow_back),
+           ),
           title: title!.text.color(darkFontGrey).fontFamily(bold).make(),
           actions: [
             IconButton(onPressed: (){}, icon: const Icon(Icons.share)),
@@ -34,14 +35,11 @@ class ItemDetails extends StatelessWidget {
                   () => IconButton(onPressed: (){
                     if(controller.isFav.value){
                     controller.removeFromWishlist(data.id, context);
-                  //controller.isFav(false);
                     }else{
                     controller.addToWishlist(data.id, context);
-                  //controller.isFav(true);
                     }
-                     }, icon: Icon(Icons.favorite_outlined,
-                color: controller.isFav.value ? redColor : darkFontGrey,
-              )),
+                     }, icon: Icon(Icons.favorite_outlined),
+                    color: controller.isFav.value ? redColor : darkFontGrey),
             )
           ],
         ),
@@ -118,14 +116,16 @@ class ItemDetails extends StatelessWidget {
                                    children: [
                                      VxBox().size(40, 40).roundedFull
                                          .color(Color(data['p_colors'][index]).withOpacity(1.0))
-                                         .margin(const EdgeInsets.symmetric(horizontal: 4)).make().onTap(() {
+                                         .margin(const EdgeInsets.symmetric(horizontal: 4)).make()
+                                         .onTap(() {
                                        controller.changeColorIndex(index);
                                      }),
                                      Visibility(
                                          visible: index == controller.colorIndex.value,
                                          child: const Icon(Icons.done, color: Colors.white,))
                                    ],
-                                 )),
+                                 )
+                               ),
                            )
                          ],
                        ).box.padding(const EdgeInsets.all(8)).make(),
@@ -146,7 +146,9 @@ class ItemDetails extends StatelessWidget {
                                  controller.calculateTotalPrice(int.parse(data['p_price']));
                                },
                                    icon: const Icon(Icons.remove)),
+
                                controller.quantity.value.text.size(16).color(darkFontGrey).fontFamily(bold).make(),
+
                                IconButton(
                                    onPressed: (){
                                  controller.increaseQuantity(int.parse(data['p_quantity']));
@@ -189,7 +191,7 @@ class ItemDetails extends StatelessWidget {
                       children: List.generate(
                           itemDetailButtonsList.length,
                               (index) => ListTile(
-                        title: itemDetailButtonsList[index].text.fontFamily(semibold).color(darkFontGrey).make(),
+                        title: itemDetailButtonsList[index].toString().text.fontFamily(semibold).color(darkFontGrey).make(),
                         trailing: const Icon(Icons.arrow_forward),
                       )),
                     ),
@@ -212,7 +214,7 @@ class ItemDetails extends StatelessWidget {
                             10.heightBox,
                             "\$600".text.color(redColor).fontFamily(bold).size(16).make()
                           ],
-                        ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).roundedSM.padding(EdgeInsets.all(8)).color(whiteColor).make()),
+                        ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).roundedSM.padding(const EdgeInsets.all(8)).color(whiteColor).make()),
                       ),
                     )
 

@@ -16,6 +16,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(AuthController());
+
     return bgWidget(
         child: Scaffold(
           resizeToAvoidBottomInset: false,
@@ -36,10 +37,10 @@ class LoginScreen extends StatelessWidget {
                    child: TextButton(onPressed: (){}, child: forgetPass.text.make())),
                5.heightBox,
                //ourButton().box.width(context.screenWidth - 50).make(),
-               controller.isloading.value?
+               controller.isloading.value ?
                const CircularProgressIndicator(
                  valueColor: AlwaysStoppedAnimation(redColor),
-               ):
+               ) :
                ourButton(
                    color: redColor, title: login, textColor: whiteColor, onPress: ()async{
                      controller.isloading(true);

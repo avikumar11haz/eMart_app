@@ -57,8 +57,7 @@ class ProfileScreen extends StatelessWidget {
                         data['imageUrl'] == ''?
 
                         Image.asset(imgProfile2, width: 100, fit: BoxFit.cover).box.roundedFull.clip(Clip.antiAlias).make()
-                        :
-                        Image.network(data['imageUrl'], width: 100, fit: BoxFit.cover).box.roundedFull.clip(Clip.antiAlias).make(),
+                        : Image.network(data['imageUrl'], width: 100, fit: BoxFit.cover).box.roundedFull.clip(Clip.antiAlias).make(),
                         10.widthBox,
                         Expanded(child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,15 +99,6 @@ class ProfileScreen extends StatelessWidget {
                         );
                       }
                       }),
-
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  //   children: [
-                  //     detailsCard(width: context.screenWidth/3.4, count: data['cart_count'], title: "in your cart"),
-                  //     detailsCard(width: context.screenWidth/3.4, count: data['wishlist_count'], title: "in your wishlist"),
-                  //     detailsCard(width: context.screenWidth/3.4, count: data['order_count'], title: "your orders"),
-                  //   ],
-                  // ),
 
                   //buttons section
                   //  20.heightBox,

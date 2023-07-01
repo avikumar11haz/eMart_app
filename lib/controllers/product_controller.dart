@@ -25,7 +25,7 @@ class ProductController extends GetxController{
   }
 
   changeColorIndex(index) {
-    colorIndex = index;
+    colorIndex.value = index;
   }
 
   increaseQuantity(totalQuantity){
@@ -47,10 +47,11 @@ class ProductController extends GetxController{
   addToCart({title, img, sellername, color, qty, tprice, context, vendorID}) async{
     await firestore.collection(cartCollection).doc().set({
       'title': title,
+      'img': img,
       'sellername': sellername,
       'color': color,
       'qty': qty,
-      'vendor': vendorID,
+      'vendor_id': vendorID,
       'tprice': tprice,
       'added_by': currentUser!.uid
     }).catchError((error){
@@ -69,7 +70,7 @@ class ProductController extends GetxController{
       'p_wishlist': FieldValue.arrayUnion([currentUser!.uid])
     }, SetOptions(merge: true));
     isFav(true);
-    VxToast.show(context, msg: "Added to wishlist");
+    VxToast.show(context, msg: "Added to favorite");
   }
 
   removeFromWishlist(docId, context) async {
@@ -77,7 +78,7 @@ class ProductController extends GetxController{
       'p_wishlist': FieldValue.arrayRemove([currentUser!.uid])
     }, SetOptions(merge: true));
     isFav(false);
-    VxToast.show(context, msg: "Removed from wishlist");
+    VxToast.show(context, msg: "Removed from favorite");
   }
 
   checkIfFav(data) async {

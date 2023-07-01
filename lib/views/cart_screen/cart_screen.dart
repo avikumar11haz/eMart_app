@@ -97,15 +97,7 @@ class CartScreen extends StatelessWidget {
                     ],
                   ).box.padding(const EdgeInsets.all(12)).color(lightgolden).width(context.screenWidth - 60).roundedSM.make(),
                   10.heightBox,
-                  // SizedBox(
-                  //   width: context.screenWidth -60,
-                  //   child: ourButton(
-                  //     color: redColor,
-                  //     onPress: (){},
-                  //     textColor: whiteColor,
-                  //     title: "Proceed to shipping",
-                  //   ),
-                  // )
+
                 ],
               ),
             );

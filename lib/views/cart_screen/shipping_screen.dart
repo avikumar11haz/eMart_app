@@ -22,10 +22,11 @@ class ShippingDetails extends StatelessWidget {
         height: 60,
         child: ourButton(
           onPress: (){
-            if(controller.addressController.text.length > 10){
+            if(controller.addressController.text.length > 10 && (controller.phoneController.text.length == 10)
+            ){
               Get.to(()=> const PaymentMethods());
             }else {
-              VxToast.show(context, msg: "Please fill the form");
+              VxToast.show(context, msg: "Please, Fill the form");
             }
           },
           color: redColor,

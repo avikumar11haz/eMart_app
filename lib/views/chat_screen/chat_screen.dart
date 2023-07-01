@@ -37,7 +37,7 @@ class ChatScreen extends StatelessWidget {
                       );
                     }else if (snapshot.data!.docs.isEmpty){
                       return Center(
-                        child: "Send a message...".text.color(darkFontGrey).make(),
+                        child: "Have you any query related to this product!!...".text.color(darkFontGrey).make(),
                       );
                     }else {
                       return ListView(
@@ -77,7 +77,9 @@ class ChatScreen extends StatelessWidget {
                   controller.msgController.clear();
                 }, icon: Icon(Icons.send, color: redColor,)),
               ],
-            ).box.height(80).padding(const EdgeInsets.all(12)).margin(const EdgeInsets.only(bottom: 8)).make(),
+            ).box.height(80).padding(const EdgeInsets.all(12))
+                .margin(const EdgeInsets.only(bottom: 8)).roundedSM
+                .make(),
           ],
         ),
       ),

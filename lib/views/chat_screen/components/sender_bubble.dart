@@ -9,11 +9,11 @@ Widget senderBubble(DocumentSnapshot data){
   return Directionality(
     textDirection: data['uid'] == currentUser!.uid ? TextDirection.rtl : TextDirection.ltr,
     child: Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-          color: data['uid'] == currentUser!.uid ?redColor : darkFontGrey,
-          borderRadius: BorderRadius.only(
+          color: data['uid'] == currentUser!.uid ? redColor : darkFontGrey,
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
             bottomLeft: Radius.circular(20),

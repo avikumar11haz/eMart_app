@@ -19,7 +19,7 @@ class PaymentMethods extends StatelessWidget {
         height: 60,
         child: controller.placingOrder.value ? Center(
           child: loadingIndicator(),
-        )
+         )
             :ourButton(
           onPress: () async{
             await controller.placeMyOrder(
@@ -39,6 +39,7 @@ class PaymentMethods extends StatelessWidget {
       appBar: AppBar(
         title: "Choose Payment Method".text.fontFamily(semibold).color(darkFontGrey).make(),
       ),
+
       body: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Obx(
@@ -78,11 +79,12 @@ class PaymentMethods extends StatelessWidget {
                             value: true,
                             onChanged: (value){},
                           ),
-                        ) : Container(),
+                        )
+                            : Container(),
                         Positioned(
                           bottom: 10,
                           right: 10,
-                          child: paymentMethods[index].text.white.fontFamily(bold).size(16).make(),
+                          child: "${paymentMethods[index]}".text.white.fontFamily(bold).size(16).make(),
                         ),
                       ],
                     ),

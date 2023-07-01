@@ -13,7 +13,7 @@ class FirestoreServices {
    }
 
    static getSubCategoryProducts(title){
-     return firestore.collection(productsCollection).where('p_subcategory', isEqualTo: title).snapshots();
+     return firestore.collection(productsCollection).where('p_subcategory', isEqualTo: title ).snapshots();
 
    }
 
@@ -25,7 +25,7 @@ class FirestoreServices {
         .snapshots();
    }
 
-   //delte document
+   //delete document
    static deleteDocument(docId){
     return firestore.collection(cartCollection).doc(docId).delete();
    }

@@ -103,8 +103,10 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     5.heightBox,
                     //ourButton().box.width(context.screenWidth - 50).make(),
-                    controller.isloading.value?
-                    const CircularProgressIndicator():
+                    controller.isloading.value ?
+                    const CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation(redColor),
+                    ) :
                     ourButton(color: isCheck == true ? redColor : lightGrey,
                         title: signup,
                         textColor: whiteColor,
@@ -122,7 +124,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 );
                               }).then((value) {
                                 VxToast.show(context, msg: loggedin);
-                                Get.offAll(()=> Home());
+                                Get.offAll(()=> const Home());
                               });
                             }catch (e){
                               auth.signOut();
