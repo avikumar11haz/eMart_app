@@ -29,7 +29,9 @@ class PaymentMethods extends StatelessWidget {
 
             await controller.clearCart();
             VxToast.show(context, msg: "Order place successfully");
+
             Get.offAll(const Home());
+            //Get.to(()=> const Home());
           },
           color: redColor,
           textColor: whiteColor,
